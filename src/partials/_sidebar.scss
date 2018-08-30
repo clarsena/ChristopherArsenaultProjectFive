@@ -1,4 +1,14 @@
 .sidebar {
-    flex: 0 1 30%;
+    flex: 0 1 20%;
     background-color: peachpuff;
+    padding-left: 25px;
+}
+
+.sidebarLinks {
+    margin: 20px;
+    list-style: none;
+}
+
+.sidebarHeading {
+    padding-top: 20px;
 }
