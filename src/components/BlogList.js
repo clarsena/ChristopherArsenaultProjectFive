@@ -2,38 +2,38 @@ import React, { Component } from 'react';
 import firebase from '../firebase';
 
 const categoryRef = firebase.database().ref('/BlogPosts');
-// let d = new Date();
-// const tempPost = {
-//     title: "Post 2",
-//     author: "Chris",
-//     image: "url-goes-here",
-//     text: "This is another temporary post to see how it looks like when it gets up here",
-//     category: ["recipes"],
-//     postDate: d.toString(),
-// }
-// console.log(tempPost.postDate);
-// // categoryRef.push(tempPost);
 
 class BlogList extends Component {
     constructor() {
         super();
         this.state = {
             blogPostList: [],
-            currentCategory: ''
+            currentCategory: '',
+            allPostsArray: [],
+            filteredLists: [],
         }
     }
-    componentWillReceiveProps() {
-        console.log(this.props); 
+    componentDidMount() {
         const category = (this.props.match.params.category.toLowerCase().replace(" ", ""));
+        this.setState({ 
+            currentCategory: category
+        })
+        categoryRef.on('value', (snapshot) => {
+            this.gatherCategoryList(snapshot.val(), category);
+        })
+    }
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps)
+        const category = (nextProps.match.params.category.toLowerCase().replace(" ", ""));
         this.setState({
             currentCategory: category
         })
         categoryRef.on('value', (snapshot) => {
-            this.gatherCategoryList(snapshot.val());
+            this.gatherCategoryList(snapshot.val(), category);
         })
     }
-    gatherCategoryList = (allPosts) => {
-        const category = this.state.currentCategory;
+    gatherCategoryList = (allPosts, category) => {
+        // const category = this.props.match.params.category;
         const allPostsArray = Object.entries(allPosts).map((posts) => {
             return ({
               key: posts[0],
@@ -46,6 +46,11 @@ class BlogList extends Component {
             })
         })
         const filteredLists = allPostsArray.filter(post => post.category.includes(category));
+        this.setState({
+            allPostsArray,
+            filteredLists
+        })
+        console.log(this.state.filteredLists);
     }
     render() {
         return (
