@@ -5,10 +5,10 @@ import firebase from './firebase';
 // 	COMPONENTS
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Router from './components/Router';
+import Main from './components/Main';
 
 //	General Firebase Reference
-const dbRef = firebase.database().ref('/Sidebar');
+const sidebarRef = firebase.database().ref('/Sidebar');
 
 class App extends Component {
 	constructor() {
@@ -20,7 +20,7 @@ class App extends Component {
 		}
 	}
 	componentDidMount() {
-		dbRef.on('value', (snapshot) => {
+		sidebarRef.on('value', (snapshot) => {
 			this.setSidebarLinks(snapshot.val());
 		});
 	}
@@ -37,7 +37,7 @@ class App extends Component {
 				<Header />
 				<main className="mainContent">
 					<Sidebar sidebarCategories={this.state.sidebarCategories} sidebarArchives={this.state.sidebarArchives} sidebarGeneral={this.state.sidebarGeneral} />
-					<Router />
+					<Main />
 				</main>
 			</div>
 		);
