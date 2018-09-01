@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import firebase from '../firebase';
 
+
 const categoryRef = firebase.database().ref('/BlogPosts');
+// const d = new Date().toString();
+// const postToPush = {
+//     title: 'Best Place to Eat',
+//     author: 'Vinodini',
+//     image: 'image URL here',
+//     text: 'The top restaurants to visit from around the city',
+//     shortDescription: 'A little bit of words here',
+//     category: ['restaurants', 'foodadventures'],
+//     postDate: d
+// }
+// categoryRef.push(postToPush);
 
 class BlogList extends Component {
     constructor() {
@@ -23,7 +36,6 @@ class BlogList extends Component {
         })
     }
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps)
         const category = (nextProps.match.params.category.toLowerCase().replace(" ", ""));
         this.setState({
             currentCategory: category
@@ -33,15 +45,14 @@ class BlogList extends Component {
         })
     }
     gatherCategoryList = (allPosts, category) => {
-        // const category = this.props.match.params.category;
         const allPostsArray = Object.entries(allPosts).map((posts) => {
             return ({
               key: posts[0],
               title: posts[1].title,
               author: posts[1].author,
               image: posts[1].image,
-              text: posts[1].text,
-              category: posts[1].category,
+              shortDescription: posts[1].shortDescription,
+              category: posts[1].category.join(', '),
               postDate: posts[1].postDate
             })
         })
@@ -50,14 +61,25 @@ class BlogList extends Component {
             allPostsArray,
             filteredLists
         })
-        console.log(this.state.filteredLists);
     }
     render() {
         return (
-            <div className="blogList">
-                <h2>Blog List Section</h2>
-                <h3>{this.state.currentCategory} Section</h3>
-            </div>
+            <section className="blogList">
+                <h2>List of Posts Under - {this.props.match.params.category}</h2>
+                {this.state.filteredLists.map((post) => {
+                    return (
+                        <Link to={`/blog-post/${post.key}`} key={post.key}>
+                            <article className="blogListListing" key={post.key}>
+                                <h3 className="blogListTitle">{post.title}</h3>
+                                <h4 className="blogListAuthor">Writter By: {post.author}</h4>
+                                <h4 className="blogListDate">Posted On: {post.postDate}</h4>
+                                <p className="blogListDescription">{post.shortDescription}</p>
+                                <p className="blogListCategories">Categories: {post.category}</p>
+                            </article>
+                        </Link>
+                    )
+                })}
+            </section>
         );
     }
 };

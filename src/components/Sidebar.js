@@ -4,19 +4,21 @@ import { Link } from 'react-router-dom';
 const Sidebar = (props) => {
 	return (
 		<aside className="sidebar">
-			<ul className="sidebarLinks">
-				<li><Link to="/">Home</Link></li>
-				<li><Link to="/aboutus">About Us</Link></li>
-				<li><Link to="/contactus">Contact Us</Link></li>
-			</ul>
-			<h3 className="sidebarHeading">Categories</h3>
-			<ul className="sidebarLinks">
-				{props.sidebarCategories.map((category, i) => {
-					return (
-						<li key={category}><Link to={`/blog-list/${category}`}>{category}</Link></li>
-					);
-				})}
-			</ul>
+			<nav className="sideNav">
+				<ul className="sidebarLinks">
+					<Link to="/" className="navLink"><li>Home</li></Link>
+					<Link to="/aboutus" className="navLink"><li>About Us</li></Link>
+					<Link to="/contactus" className="navLink"><li>Contact Us</li></Link>
+				</ul>
+				<h3 className="sidebarHeading">Categories</h3>
+				<ul className="sidebarLinks">
+					{props.sidebarCategories.map((category, i) => {
+						return (
+							<Link to={`/blog-list/${category}`} className="navLink" ><li key={category}>{category}</li></Link>
+						);
+					})}
+				</ul>
+			</nav>
 		</aside>
 	);
 };

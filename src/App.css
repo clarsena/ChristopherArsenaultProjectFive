@@ -1,29 +1,303 @@
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article, aside, footer, header, nav, section {
+  display: block; }
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0; }
+
+figcaption, figure, main {
+  display: block; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+pre {
+  font-family: monospace,monospace;
+  font-size: 1em; }
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects; }
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+
+b, strong {
+  font-weight: inherit; }
+
+b, strong {
+  font-weight: bolder; }
+
+code, kbd, samp {
+  font-family: monospace,monospace;
+  font-size: 1em; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -.25em; }
+
+sup {
+  top: -.5em; }
+
+audio, video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+img {
+  border-style: none; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0; }
+
+button, input {
+  overflow: visible; }
+
+button, select {
+  text-transform: none; }
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button; }
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+fieldset {
+  padding: .35em .75em .625em; }
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal; }
+
+progress {
+  display: inline-block;
+  vertical-align: baseline; }
+
+textarea {
+  overflow: auto; }
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0; }
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto; }
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+
+details, menu {
+  display: block; }
+
+summary {
+  display: list-item; }
+
+canvas {
+  display: inline-block; }
+
+template {
+  display: none; }
+
+[hidden] {
+  display: none; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.visuallyhidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden; }
+
+html {
+  font-size: 62.5%; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
 header {
   padding: 50px;
-  background-color: #999999;
-  flex-basis: 100%; }
+  background-color: rgba(240, 240, 240, 0.945);
+  flex-basis: 100%;
+  text-align: center;
+  font-family: 'Playfair Display', serif; }
 
 .sidebar {
   flex: 0 1 20%;
-  background-color: peachpuff;
-  padding-left: 25px; }
+  background-color: rgba(240, 240, 240, 0.945);
+  padding: 0 25px;
+  font-family: 'Playfair Display', serif; }
 
 .sidebarLinks {
-  margin: 20px;
-  list-style: none; }
+  margin: 20px 0;
+  list-style: none;
+  width: 100%; }
+  .sidebarLinks li {
+    padding: 10px 0; }
 
 .sidebarHeading {
-  padding-top: 20px; }
+  padding: 20px 0;
+  border-top: 1px solid #333333;
+  border-bottom: 1px solid #333333; }
+
+.navLink:visited {
+  color: #333333; }
+
+.navLink li {
+  padding: 10px;
+  transition: all 0.5s ease-in; }
+  .navLink li:hover {
+    background-color: rgba(252, 252, 252, 0.877);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
 
 .landingPage {
   flex: 0 1 80%;
-  background-color: paleturquoise;
-  padding: 20px 0 0 25px; }
+  background-color: rgba(177, 177, 177, 0.377);
+  padding: 20px 25px 0 25px; }
+
+.blogListListing {
+  margin: 25px 0;
+  padding: 20px 25px;
+  color: #333333;
+  transition: all 0.5s ease-in;
+  position: relative; }
+  .blogListListing:hover {
+    background-color: rgba(252, 252, 252, 0.877);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
+  .blogListListing::after {
+    content: '';
+    width: 75%;
+    border-bottom: 2px solid #333333;
+    position: absolute;
+    left: 10%;
+    bottom: -6%; }
+
+.blogListTitle {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+  text-decoration: underline; }
+
+.blogListAuthor {
+  margin-bottom: 3px; }
+
+.blogListDate {
+  margin-bottom: 15px; }
+
+.blogListDescription {
+  margin-bottom: 15px; }
+
+.blogListCategories {
+  font-style: oblique; }
 
 .blogPost {
   flex: 0 1 80%;
-  background-color: skyblue;
-  padding: 20px 0 0 25px; }
+  background-color: rgba(241, 194, 194, 0.233);
+  padding: 20px 25px 0 25px; }
+
+.blogPostListing {
+  margin: 25px 0;
+  color: #333333; }
+
+.blogPostTitle {
+  font-size: 4.0rem;
+  text-decoration: underline;
+  margin-bottom: 20px; }
+
+.blogPostDate {
+  margin-bottom: 25px;
+  margin-top: 5px; }
+
+.blogPostText {
+  margin-bottom: 50px; }
+
+.blogPostCategories {
+  font-style: oblique; }
 
 .App {
   display: flex;
@@ -37,3 +311,8 @@ header {
   max-width: 1250px;
   width: 100%;
   margin: 0 auto; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  background-color: rgba(255, 255, 255, 0.733); }

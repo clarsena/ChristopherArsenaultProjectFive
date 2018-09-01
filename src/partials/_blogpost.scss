@@ -1,0 +1,29 @@
+.blogPost {
+    flex: 0 1 80%;
+    background-color: rgba(241, 194, 194, 0.233);
+    padding: 20px 25px 0 25px;
+}
+
+.blogPostListing {
+    margin: 25px 0;
+    color: #333333;
+}
+
+.blogPostTitle {
+    font-size: 4.0rem;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.blogPostDate {
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+.blogPostText {
+    margin-bottom: 50px;
+}
+
+.blogPostCategories {
+    font-style: oblique;
+}
