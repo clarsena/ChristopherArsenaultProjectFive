@@ -41,7 +41,7 @@ class Comments extends Component {
                         return (
                             <div className="singleComment">
                                 <h4>Commentor: {comment.commentAuthor}</h4>
-                                <h4>Date: {comment.commentDate}></h4>
+                                <h4>Date: {comment.commentDate}</h4>
                                 <p>{comment.commentText}</p>
                             </div>
                         )

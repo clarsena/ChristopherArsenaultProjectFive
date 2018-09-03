@@ -45,6 +45,13 @@ class BlogPost extends Component {
                 postDate: snapshot.val().postDate,
                 cleanPost: sanitizeHTML(snapshot.val().text, {
                     allowedTags: sanitizeHTML.defaults.allowedTags.concat([ 'img' ]),
+                        allowedAttributes: {
+                            '*': [ 'class' ],
+                            
+                          },
+                        allowedClasses: {
+                        '*': [ 'bold', '.underline', '.italic', '.center', '.right', '.left', '.big', '.small' ]
+                        }
                   }),
             });
         })

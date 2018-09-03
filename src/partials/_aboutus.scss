@@ -1,5 +1,14 @@
 .aboutUsSection {
+    h2 {
+        margin-bottom: 50px;
+    }
     p{
         margin: 20px 0;
+    }
+    img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
     }
 }

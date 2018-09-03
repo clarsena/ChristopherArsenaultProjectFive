@@ -4,7 +4,6 @@ import firebase from './firebase';
 
 // 	COMPONENTS
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 import Main from './components/Main';
 
 //	General Firebase Reference
@@ -36,7 +35,6 @@ class App extends Component {
 			<div className="App wrapper">
 				<Header />
 				<main className="mainContent">
-					<Sidebar sidebarCategories={this.state.sidebarCategories} sidebarArchives={this.state.sidebarArchives} sidebarGeneral={this.state.sidebarGeneral} />
 					<Main />
 				</main>
 			</div>

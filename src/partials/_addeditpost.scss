@@ -1,0 +1,33 @@
+.adminForm { 
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    fieldset {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.newPostLabel {
+    flex: 0 1 100%;
+    padding-bottom: 5px;
+}
+
+.newPostInput {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 5px;
+}
+
+fieldset.newPostInput {
+    padding: 10px;
+}
+
+.fieldsetLabel {
+    width: 125px;
+}
+
+.fieldsetInput {
+    width: 10px;
+}

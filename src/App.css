@@ -203,29 +203,24 @@ a {
   text-decoration: none; }
 
 header {
-  padding: 50px;
+  padding: 30px;
   background-color: rgba(240, 240, 240, 0.945);
   flex-basis: 100%;
   text-align: center;
-  font-family: 'Playfair Display', serif; }
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  flex-direction: column; }
 
-.sidebar {
-  flex: 0 1 20%;
-  background-color: rgba(240, 240, 240, 0.945);
-  padding: 0 25px;
-  font-family: 'Playfair Display', serif; }
-
-.sidebarLinks {
+.topNavLinks {
   margin: 20px 0;
   list-style: none;
-  width: 100%; }
-  .sidebarLinks li {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .topNavLinks li {
+    padding: 10px; }
+  .topNavLinks .navSeperator {
     padding: 10px 0; }
-
-.sidebarHeading {
-  padding: 20px 0;
-  border-top: 1px solid #333333;
-  border-bottom: 1px solid #333333; }
 
 .navLink:visited {
   color: #333333; }
@@ -238,7 +233,7 @@ header {
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
 
 .landingPage {
-  flex: 0 1 80%;
+  flex: 0 1 100%;
   background-color: rgba(177, 177, 177, 0.377);
   padding: 20px 25px 0 25px; }
 
@@ -321,8 +316,29 @@ header {
   .blogPostImage img {
     max-width: 100%; }
 
-.blogPostText .boldText {
+.blogPostText .bold {
   font-weight: 800; }
+
+.blogPostText .underline {
+  text-decoration: underline; }
+
+.blogPostText .italic {
+  font-style: oblique; }
+
+.blogPostText .center {
+  text-align: center; }
+
+.blogPostText .right {
+  text-align: right; }
+
+.blogPostText .left {
+  text-align: left; }
+
+.blogPostText .big {
+  font-size: 2.0rem; }
+
+.blogPostText .small {
+  font-size: 1.2rem; }
 
 .blogPostComments {
   margin-top: 25px;
@@ -353,8 +369,70 @@ header {
     font-size: 1.3rem;
     margin-top: 10px; }
 
+.aboutUsSection h2 {
+  margin-bottom: 50px; }
+
 .aboutUsSection p {
   margin: 20px 0; }
+
+.aboutUsSection img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; }
+
+.contactUsForm {
+  width: 100%;
+  display: flex;
+  font-size: 1.6rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 25px; }
+  .contactUsForm label {
+    margin-top: 20px; }
+
+.contactName,
+.contactEmail {
+  flex: 0 1 48%;
+  margin: 25px 0;
+  padding: 5px; }
+
+.contactMessage {
+  flex: 1 1 100%;
+  padding: 5px; }
+
+.contactSubmit {
+  border: none;
+  padding: 5px;
+  margin-top: 20px;
+  background-color: #FFFFFF; }
+
+.adminForm {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column; }
+  .adminForm fieldset {
+    display: flex;
+    flex-direction: column; }
+
+.newPostLabel {
+  flex: 0 1 100%;
+  padding-bottom: 5px; }
+
+.newPostInput {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 5px; }
+
+fieldset.newPostInput {
+  padding: 10px; }
+
+.fieldsetLabel {
+  width: 125px; }
+
+.fieldsetInput {
+  width: 10px; }
 
 .App {
   display: flex;
@@ -362,7 +440,7 @@ header {
 
 .mainContent {
   display: flex;
-  min-height: 86vh; }
+  width: 100%; }
 
 .wrapper {
   max-width: 1250px;

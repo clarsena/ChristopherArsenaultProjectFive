@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from '../firebase';
+import sanitizeHTML from 'sanitize-html'
 
 const blogPostsRef = firebase.database().ref('/BlogPosts');
 
@@ -38,6 +39,10 @@ class Landing extends Component {
             <section className="blogList">
                 <h2>Latest Updates</h2>
                 {this.state.blogPostList.map((post) => {
+                    const cleanText = sanitizeHTML(post.shortDescription, {
+                        allowedTags: [],
+                        allowedAttributes: []
+                      })
                     return (
                         <Link to={`/blog-post/${post.key}`} key={post.key}>
                             <article className="blogListListing" key={post.key}>
@@ -48,7 +53,7 @@ class Landing extends Component {
                                     <h3 className="blogListTitle">{post.title}</h3>
                                     <h4 className="blogListAuthor">Writter By: {post.author}</h4>
                                     <h4 className="blogListDate">Posted On: {post.postDate}</h4>
-                                    <p className="blogListDescription">{post.shortDescription}</p>
+                                    <p className="blogListDescription">{cleanText}</p>
                                     <p className="blogListCategories">Categories: {post.category}</p>
                                 </div>
                             </article>

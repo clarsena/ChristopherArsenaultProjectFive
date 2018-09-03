@@ -1,10 +1,11 @@
 @import 'partials/setup';
 @import 'partials/header';
-@import 'partials/sidebar';
 @import 'partials/landing';
 @import 'partials/bloglist';
 @import 'partials/blogpost';
 @import 'partials/aboutus';
+@import 'partials/contactus';
+@import 'partials/addeditpost';
 
 .App {
   display: flex;
@@ -13,7 +14,7 @@
 
 .mainContent {
   display: flex;
-  min-height: 86vh;
+  width: 100%;
 }
 
 .wrapper {

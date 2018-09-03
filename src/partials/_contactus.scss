@@ -1,0 +1,30 @@
+.contactUsForm {
+    width: 100%;
+    display: flex;
+    font-size: 1.6rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    label {
+        margin-top: 20px;
+    }
+}
+
+.contactName, 
+.contactEmail {
+    flex: 0 1 48%;
+    margin: 25px 0;
+    padding: 5px;
+}
+
+.contactMessage {
+    flex: 1 1 100%;
+    padding: 5px;
+}
+
+.contactSubmit {
+    border: none;
+    padding: 5px;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+}
