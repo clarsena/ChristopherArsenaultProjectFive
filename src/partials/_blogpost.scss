@@ -20,10 +20,28 @@
     margin-top: 5px;
 }
 
-.blogPostText {
-    margin-bottom: 50px;
-}
-
 .blogPostCategories {
     font-style: oblique;
+}
+
+.blogPostListing div p {
+    margin-bottom: 15px;
+}
+
+.blogPostImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    text-align: center;
+    width: 50%;
+    img {
+        max-width: 100%;
+    }
+}
+
+.blogPostText {
+    .boldText {
+        font-weight: 800;
+    }
 }

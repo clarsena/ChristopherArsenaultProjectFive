@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../firebase';
+import sanitizeHTML from 'sanitize-html';
 
 class BlogPost extends Component {
     constructor() {
@@ -11,7 +12,8 @@ class BlogPost extends Component {
             image: '',
             text: '',
             category: '',
-            postDate: ''
+            postDate: '',
+            cleanPost: '',
         }
     }
     componentDidMount() {
@@ -25,18 +27,25 @@ class BlogPost extends Component {
                 image: snapshot.val().image,
                 text: snapshot.val().text,
                 category: snapshot.val().category.join(', '),
-                postDate: snapshot.val().postDate
-            })
+                postDate: snapshot.val().postDate,
+                cleanPost: sanitizeHTML(snapshot.val().text, {
+                    allowedTags: sanitizeHTML.defaults.allowedTags.concat([ 'img' ]),
+                  })
+            });
         })
     }
 
     render() {
+        console.log(this.state.cleanPost)
         return (
             <article className="blogPostListing" key={this.state.key}>
                 <h3 className="blogPostTitle">{this.state.title}</h3>
                 <h4 className="blogPostAuthor">Written By: {this.state.author}</h4>
                 <h4 className="blogPostDate">Posted On: {this.state.postDate}</h4>
-                <p className="blogPostText">{this.state.text}</p>
+                <figure className="blogPostImage">
+                    <img src={this.state.image} alt="food"/>
+                </figure>
+                <div className="blogPostText" dangerouslySetInnerHTML={{__html: this.state.cleanPost}}/>
                 <p className="blogPostCategories">Categories: {this.state.category}</p>
             </article>
         );

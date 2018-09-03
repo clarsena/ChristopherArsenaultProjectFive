@@ -299,6 +299,22 @@ header {
 .blogPostCategories {
   font-style: oblique; }
 
+.boldText {
+  font-weight: 600; }
+
+.blogPostListing div p {
+  margin-bottom: 15px; }
+
+.blogPostImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 50%; }
+  .blogPostImage img {
+    max-width: 100%; }
+
 .App {
   display: flex;
   flex-direction: column; }
