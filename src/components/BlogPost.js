@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from '../firebase';
 import sanitizeHTML from 'sanitize-html';
+import Comments from './Comments';
 
 class BlogPost extends Component {
     constructor() {
@@ -14,12 +15,26 @@ class BlogPost extends Component {
             category: '',
             postDate: '',
             cleanPost: '',
+            commentArray: []
         }
     }
     componentDidMount() {
         const key = (this.props.match.params.key);
         const blogPostRef = firebase.database().ref(`/BlogPosts/${key}`);
         blogPostRef.on('value', (snapshot) => {
+            if(snapshot.val().comments) {
+                const allCommentsArray = Object.entries(snapshot.val().comments).map((comment) => {
+                    return ({
+                      key: comment[0],
+                      commentAuthor: comment[1].author,
+                      commentText: comment[1].commentText,
+                      commentDate: comment[1].date
+                    })
+                })
+                this.setState({
+                    commentArray: allCommentsArray
+                })
+            }
             this.setState({
                 key: snapshot.val().key,
                 title: snapshot.val().title,
@@ -30,11 +45,20 @@ class BlogPost extends Component {
                 postDate: snapshot.val().postDate,
                 cleanPost: sanitizeHTML(snapshot.val().text, {
                     allowedTags: sanitizeHTML.defaults.allowedTags.concat([ 'img' ]),
-                  })
+                  }),
             });
         })
     }
-
+    addComment = (commentAuthor, commentText, commentDate) => {
+        const key = (this.props.match.params.key);
+        const blogPostRef = firebase.database().ref(`/BlogPosts/${key}/comments`);
+        const commentToPush = {
+            author: commentAuthor,
+            commentText: commentText,
+            date: commentDate
+        }
+        blogPostRef.push(commentToPush);
+    }
     render() {
         console.log(this.state.cleanPost)
         return (
@@ -43,10 +67,11 @@ class BlogPost extends Component {
                 <h4 className="blogPostAuthor">Written By: {this.state.author}</h4>
                 <h4 className="blogPostDate">Posted On: {this.state.postDate}</h4>
                 <figure className="blogPostImage">
-                    <img src={this.state.image} alt="food"/>
+                    <img src={this.state.image ? `${this.state.image}` : "/assets/default.jpg"} alt="food"/>
                 </figure>
                 <div className="blogPostText" dangerouslySetInnerHTML={{__html: this.state.cleanPost}}/>
                 <p className="blogPostCategories">Categories: {this.state.category}</p>
+                <Comments addComment={this.addComment} allComments={this.state.commentArray} />
             </article>
         );
     }

@@ -191,7 +191,8 @@ h3,
 h4,
 h5,
 h6,
-ul {
+ul,
+figure {
   margin: 0;
   padding: 0; }
 
@@ -246,7 +247,8 @@ header {
   padding: 20px 25px;
   color: #333333;
   transition: all 0.5s ease-in;
-  position: relative; }
+  position: relative;
+  display: flex; }
   .blogListListing:hover {
     background-color: rgba(252, 252, 252, 0.877);
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
@@ -257,6 +259,16 @@ header {
     position: absolute;
     left: 10%;
     bottom: -6%; }
+
+.blogListPicture {
+  flex: 0 1 25%;
+  width: 25%;
+  margin-right: 25px; }
+  .blogListPicture img {
+    max-width: 100%; }
+
+.blogListText {
+  flex: 1 1 75%; }
 
 .blogListTitle {
   font-size: 2.4rem;
@@ -293,14 +305,8 @@ header {
   margin-bottom: 25px;
   margin-top: 5px; }
 
-.blogPostText {
-  margin-bottom: 50px; }
-
 .blogPostCategories {
   font-style: oblique; }
-
-.boldText {
-  font-weight: 600; }
 
 .blogPostListing div p {
   margin-bottom: 15px; }
@@ -314,6 +320,41 @@ header {
   width: 50%; }
   .blogPostImage img {
     max-width: 100%; }
+
+.blogPostText .boldText {
+  font-weight: 800; }
+
+.blogPostComments {
+  margin-top: 25px;
+  width: 100%; }
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 25px; }
+
+.commentSubmit {
+  margin-top: 15px;
+  width: 25%; }
+
+.commentLabel {
+  margin-top: 15px; }
+
+.singleComment {
+  margin: 0 0 15px 0;
+  padding: 20px 25px;
+  background-color: white;
+  position: relative;
+  box-shadow: 2px 2px 2px 2px rgba(66, 66, 66, 0.575); }
+  .singleComment h4 {
+    font-size: 1.2rem; }
+  .singleComment p {
+    font-size: 1.3rem;
+    margin-top: 10px; }
+
+.aboutUsSection p {
+  margin: 20px 0; }
 
 .App {
   display: flex;

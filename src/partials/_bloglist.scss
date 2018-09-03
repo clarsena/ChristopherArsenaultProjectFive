@@ -4,6 +4,7 @@
     color: #333333;
     transition: all 0.5s ease-in;
     position: relative;
+    display: flex;
     &:hover {
         background-color: rgba(252, 252, 252, 0.877);
         box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
@@ -16,6 +17,19 @@
         left: 10%;
         bottom: -6%;
     }
+}
+
+.blogListPicture {
+    flex: 0 1 25%;
+    width: 25%;
+    margin-right: 25px;
+    img {
+        max-width: 100%;
+    }
+}
+
+.blogListText {
+    flex: 1 1 75%;
 }
 
 .blogListTitle {

@@ -41,11 +41,16 @@ class Landing extends Component {
                     return (
                         <Link to={`/blog-post/${post.key}`} key={post.key}>
                             <article className="blogListListing" key={post.key}>
-                                <h3 className="blogListTitle">{post.title}</h3>
-                                <h4 className="blogListAuthor">Writter By: {post.author}</h4>
-                                <h4 className="blogListDate">Posted On: {post.postDate}</h4>
-                                <p className="blogListDescription">{post.shortDescription}</p>
-                                <p className="blogListCategories">Categories: {post.category}</p>
+                                <figure className="blogListPicture">
+                                    <img src={post.image ? `${post.image}` : "/assets/default.jpg"} />
+                                </figure>
+                                <div className="blogListText">
+                                    <h3 className="blogListTitle">{post.title}</h3>
+                                    <h4 className="blogListAuthor">Writter By: {post.author}</h4>
+                                    <h4 className="blogListDate">Posted On: {post.postDate}</h4>
+                                    <p className="blogListDescription">{post.shortDescription}</p>
+                                    <p className="blogListCategories">Categories: {post.category}</p>
+                                </div>
                             </article>
                         </Link>
                     )
