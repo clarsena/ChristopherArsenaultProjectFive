@@ -4,7 +4,7 @@ const ContactUs = () => {
     return (
         <section className="contactUsSection">
             <h2>Contact Us Section</h2>
-            <form action="" className="contactUsForm">
+            <form action="http://www.focuspocus.io/magic/94413fafb7898c5f8fbc168fb8c76367" method="POST" className="contactUsForm">
                 <label htmlFor="contactName" className="visuallyhidden">Name: </label>
                 <input type="text" id="contactName" className="contactName" placeholder="Please enter your name..."/>
                 <label htmlFor="contactEmail" className="visuallyhidden">E-Mail: </label>
