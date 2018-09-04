@@ -5,6 +5,7 @@ import firebase from '../firebase';
 class AddEditPost extends Component {
     constructor() {
         super();
+        //  SETTING THE INITIAL STATE
         this.state = {
             title: '',
             author: '',
@@ -18,6 +19,7 @@ class AddEditPost extends Component {
             foodadventures: false
         }
     }
+    //  HANDLECHANGE LISTENS FOR ANY CHANGES IN THE INPUTS AND SETS THE STATE ACCORDINGLY
     handleChange = (e) => {
         const target = e.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -26,10 +28,15 @@ class AddEditPost extends Component {
             [name]: value
         })
     }
+
+    //  HANDLESUBMIT LISTENS FOR THE FORM SUBMISSION AND PUSHES THE NEW POST TO THE DATABASE
     handleSubmit = (e) => {
         e.preventDefault();
+        //  CREATING THE CURRENT TIMESTAMP
         const d = new Date().toString();
+        //  FIREBASE REFERENCE FOR THE BLOGPOSTS NODE
         const newPostRef = firebase.database().ref('/BlogPosts');
+        //  PUTTING TOGETHER ALL THE DATA FOR THE NEW POST
         const newPostKey = newPostRef.push().key;
         if(this.state.recipes) {
             this.state.category.push('recipes');
@@ -50,6 +57,7 @@ class AddEditPost extends Component {
             category: this.state.category,
             postDate: d,
         }
+        //  PUSHING THE POST TO FIREBASE AND CLEARING THE STATE
         newPostRef.push(postToPush);
         this.setState({
             title: '',
@@ -68,6 +76,7 @@ class AddEditPost extends Component {
         return (
             <section className="adminArea">
                 <h2>Admin Area</h2>
+                {/* FORM INPUTS FOR ADDING A NEW POST*/}
                 <form action="" className="adminForm" onSubmit={this.handleSubmit}>
                     <label htmlFor="newPostTitle" className="newPostLabel">Post Title: </label>
                     <input type="text" onChange={this.handleChange} className="newPostTitle newPostInput" name="title" id="title" placeholder="Enter your title..." required value={this.state.title} />
@@ -95,6 +104,7 @@ class AddEditPost extends Component {
                     <input type="submit" className="newPostSubmit" value="Create New Post"/>
                 </form>
                 <h2>Post Preview</h2>
+                {/* PREVIEW COMPONENT TO GET A PREVIEW OF HOW THE POST WILL LOOK */}
                 <Preview previewTitle={this.state.title} previewAuthor={this.state.author} previewImage={this.state.image} previewText={this.state.text} />
             </section>
         );

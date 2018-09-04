@@ -6,6 +6,7 @@ import Comments from './Comments';
 class BlogPost extends Component {
     constructor() {
         super();
+        //  SETTING THE INITIAL STATE
         this.state = {
             key: '',
             title: '',
@@ -18,10 +19,12 @@ class BlogPost extends Component {
             commentArray: []
         }
     }
+    //  GRABBING THE SPECIFIC POST MATCHING THE PASSED KEY FROM FIREBASE 
     componentDidMount() {
         const key = (this.props.match.params.key);
         const blogPostRef = firebase.database().ref(`/BlogPosts/${key}`);
         blogPostRef.on('value', (snapshot) => {
+            //  CHECKING IF THERE ARE ANY COMMENTS FOR THE SPECIFIC POST AND SETTING THE STATE IF THERE ARE
             if(snapshot.val().comments) {
                 const allCommentsArray = Object.entries(snapshot.val().comments).map((comment) => {
                     return ({
@@ -35,6 +38,7 @@ class BlogPost extends Component {
                     commentArray: allCommentsArray
                 })
             }
+            //  GRABBIG ALL THE INFO FOR THE POST AND SETTING THE STATE. SANITIZEHTML CLEANS THE TEXT OF THE POST OF ANY UNWANTED HTML TAGS
             this.setState({
                 key: snapshot.val().key,
                 title: snapshot.val().title,
@@ -56,6 +60,7 @@ class BlogPost extends Component {
             });
         })
     }
+    //  GRABS A NEWLY ENTERED COMMENT AND PUSHES IT TO FIREBASE
     addComment = (commentAuthor, commentText, commentDate) => {
         const key = (this.props.match.params.key);
         const blogPostRef = firebase.database().ref(`/BlogPosts/${key}/comments`);
@@ -68,6 +73,7 @@ class BlogPost extends Component {
     }
     render() {
         console.log(this.state.cleanPost)
+        {/* TAKES THE INFORMATION FROM THE SPECIFIED POST AND RENDERS IT TO THE PAGE */}
         return (
             <article className="blogPostListing" key={this.state.key}>
                 <h3 className="blogPostTitle">{this.state.title}</h3>
@@ -78,6 +84,7 @@ class BlogPost extends Component {
                 </figure>
                 <div className="blogPostText" dangerouslySetInnerHTML={{__html: this.state.cleanPost}}/>
                 <p className="blogPostCategories">Categories: {this.state.category}</p>
+                {/* AREA TO LEAVE COMMENTS ON THE POST */}
                 <Comments addComment={this.addComment} allComments={this.state.commentArray} />
             </article>
         );

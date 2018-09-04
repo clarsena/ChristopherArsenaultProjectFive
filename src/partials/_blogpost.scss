@@ -1,3 +1,5 @@
+// START OF SINGLE BLOG POST STYLING
+
 .blogPost {
     flex: 0 1 80%;
     background-color: rgba(241, 194, 194, 0.233);
@@ -106,6 +108,8 @@
         margin-top: 10px;
     }
 }
+
+// END OF SINGLE BLOG POST STYLING
 
 @media (max-width: 550px) {
 

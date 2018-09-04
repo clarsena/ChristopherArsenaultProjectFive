@@ -1,5 +1,6 @@
 import React from 'react';
 
+//  PAGE NOT FOUND FOR IF THE USER TRIES TO NAVIGATE SOMEWHERE
 const NotFound = () => {
     return (
         <div>

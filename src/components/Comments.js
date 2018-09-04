@@ -3,17 +3,20 @@ import React, { Component } from 'react';
 class Comments extends Component {
     constructor() {
         super();
+        //  SETTING THE INITIAL STATE
         this.state = {
             commentAuthor: '',
             commentText: '',
             commentArray: ''
         }
     }
+    //  HANDLECHANGE LISTENS FOR ANY CHANGES TO EITHER OF THE INPUT FIELDS
     handleChange = (e) => {
         this.setState({
             [e.target.id]: e.target.value
         })
     }
+    //  HANDLESUBMIT LISTENS FOR THE FORM SUBMISSION AND SENDS THE COMMENT INFO BACK UP TO THE BLOGPOST COMPONENT TO BE FINALIZED
     handleSubmit = (e) => {
         e.preventDefault();
         const d = new Date().toString();
@@ -25,6 +28,7 @@ class Comments extends Component {
 
     }
     render() {
+        {/* RENDERS THE COMMENT SUBMISSION FOR AND ACTUAL COMMENTS TO THE PAGE */}
         return (
             <div className="blogPostComments">
                 <h3>Comments</h3>

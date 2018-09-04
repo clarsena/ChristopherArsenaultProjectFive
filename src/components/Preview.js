@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import sanitizeHTML from 'sanitize-html';
 
+//  PREVIEW COMPONENT TO PREVIEW WHAT A BLOG POST LOOKS LIKE WHILE ENTERING IT
 class Preview extends Component {
     render() {
         return (

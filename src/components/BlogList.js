@@ -2,23 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from '../firebase';
 
-
+//  FIREBASE REFERENCE FOR THE BLOG POSTS NODE
 const categoryRef = firebase.database().ref('/BlogPosts');
-// const d = new Date().toString();
-// const postToPush = {
-//     title: 'Best Place to Eat',
-//     author: 'Vinodini',
-//     image: 'image URL here',
-//     text: 'The top restaurants to visit from around the city',
-//     shortDescription: 'A little bit of words here',
-//     category: ['restaurants', 'foodadventures'],
-//     postDate: d
-// }
-// categoryRef.push(postToPush);
 
 class BlogList extends Component {
     constructor() {
         super();
+        //  SETTING THE INITIAL STATE
         this.state = {
             blogPostList: [],
             currentCategory: '',
@@ -27,6 +17,7 @@ class BlogList extends Component {
         }
     }
     componentDidMount() {
+        //  GRABBING A SNAPSHOT OF THE BLOG POSTS NODE FROM FIREBASE WHEN THE COMPONENT MOUNTS
         const category = (this.props.match.params.category.toLowerCase().replace(" ", ""));
         this.setState({ 
             currentCategory: category
@@ -35,6 +26,7 @@ class BlogList extends Component {
             this.gatherCategoryList(snapshot.val(), category);
         })
     }
+    //  GRABBING A SNAPSHOT OF THE BLOG POSTS NODE FROM FIREBASE WHEN THE COMPONENT WILL RECEIVE COMPONENTS (WHEN SELECTING A DIFFERENT CATEGORY)
     componentWillReceiveProps(nextProps) {
         const category = (nextProps.match.params.category.toLowerCase().replace(" ", ""));
         this.setState({
@@ -44,6 +36,7 @@ class BlogList extends Component {
             this.gatherCategoryList(snapshot.val(), category);
         })
     }
+    //  GOING THROUGH ALL THE BLOG POST OBJECTS FOR THE SPECIFIC CATEGORY AND MAKING THEM INTO AN ARRAY OF JUST THE RELEVENT DATA
     gatherCategoryList = (allPosts, category) => {
         const allPostsArray = Object.entries(allPosts).map((posts) => {
             return ({
@@ -57,6 +50,7 @@ class BlogList extends Component {
             })
         })
         const filteredLists = allPostsArray.filter(post => post.category.includes(category));
+        //  SETTING THE STATE FOR THE NEWLY CREATED ARRAYS
         this.setState({
             allPostsArray,
             filteredLists
@@ -66,6 +60,7 @@ class BlogList extends Component {
         return (
             <section className="blogList">
                 <h2>List of Posts Under - {this.props.match.params.category}</h2>
+                {/* GOING THROUGH THE ARRAY OF FILTERED POSTS AND RENDERING THEM ONTO THE PAGE*/}
                 {this.state.filteredLists.map((post) => {
                     return (
                         <Link to={`/blog-post/${post.key}`} key={post.key}>

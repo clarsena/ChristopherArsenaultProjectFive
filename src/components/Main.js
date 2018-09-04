@@ -1,5 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
+
+//  COMPONENTS
 import Landing from './Landing';
 import BlogList from './BlogList';
 import AddEditPost from './AddEditPost';
@@ -8,6 +10,7 @@ import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import BlogPost from './BlogPost';
 
+//  ROUTING SETUP TO NAVIGATE THROUGH THE SITE
 const Main = () => {
     return (
         <section className="landingPage">

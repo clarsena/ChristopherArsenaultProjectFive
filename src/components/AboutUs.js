@@ -1,5 +1,6 @@
 import React from 'react';
 
+//  START OF ABOUT US COMPONENT
 const AboutUs = () => {
     return (
         <section className="aboutUsSection">
@@ -14,3 +15,4 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+//  END OF ABOUS US COMPONENT

@@ -3,20 +3,24 @@ import { Link } from 'react-router-dom';
 import firebase from '../firebase';
 import sanitizeHTML from 'sanitize-html'
 
+//  INITIAL LANDING PAGE
 const blogPostsRef = firebase.database().ref('/BlogPosts');
 
 class Landing extends Component {
     constructor() {
         super();
+        //  SETTING THE INITIAL STATE
         this.state = {
             blogPostList: [],
         }
     }
+    //  GRAB THE INFORMATION FROM FIREBASE WHEN THE COMPONENT MOUNTS
     componentDidMount() {
         blogPostsRef.on('value', (snapshot) => {
             this.gatherBlogPosts(snapshot.val());
         })
     }
+    //  GO THROUGH THE FIREBASE INFORMATION AND GATHER ALL THE RELEVENT INFORMATION FOR THE POSTS
     gatherBlogPosts = (allPosts) => {
         const blogPostList = Object.entries(allPosts).map((posts) => {
             return ({
@@ -35,6 +39,7 @@ class Landing extends Component {
         })
     }
     render() {
+        {/* RENDERS THE BLOG POST TO THE PAGE. FOR THE IMAGE, IF THERE IS A PATH INSIDE, SHOW IT, OTHERWISE LOAD A DEFAULT PAGE */}
         return (
             <section className="blogList">
                 <h2>Latest Updates</h2>

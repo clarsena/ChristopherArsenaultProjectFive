@@ -1,5 +1,6 @@
 import React from 'react';
 
+//  RENDERS THE CONTACT US FORM TO THE PAGE AND SUBMISSION IS HANDLED THROUGH FOCUS POCUS
 const ContactUs = () => {
     return (
         <section className="contactUsSection">
