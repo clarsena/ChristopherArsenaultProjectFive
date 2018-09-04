@@ -55,8 +55,10 @@ header {
 @media (max-width: 750px) {
 
     .header {
+        padding: 15px 25px;
         h1 {
             text-align: left;
+            margin-bottom: 10px;
         }
     }
 

@@ -1,5 +1,5 @@
 .blogListListing {
-    margin: 25px 0;
+    margin-top: 60px;
     padding: 20px 25px;
     color: #333333;
     transition: all 0.5s ease-in;
@@ -56,7 +56,19 @@
 
 @media (max-width: 750px) {
 
+    .blogListListing {
+        flex-direction: column;
+    }
+
     .blogListPicture {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px auto;
+        width: 100%;
+    }
+
+    .blogListDescription {
         display: none;
     }
 
