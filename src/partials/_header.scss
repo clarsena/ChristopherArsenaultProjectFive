@@ -6,6 +6,7 @@ header {
     font-family: 'Playfair Display', serif;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .topNavLinks {
@@ -22,6 +23,20 @@ header {
     }
 }
 
+.topNavHamburgerIcon {
+	display: none;
+	font-size: 3.5rem;
+}
+
+.exitResponsive {
+	display: none;
+	font-size: 2.5rem;
+}
+
+.show.topNavHamburgerMenu {
+	display: block;
+}
+
 .navLink {
     &:visited {
         color: #333333;
@@ -35,3 +50,59 @@ header {
         }
     }
 }
+
+@media (max-width: 750px) {
+
+    .header {
+        h1 {
+            text-align: left;
+        }
+    }
+
+    .navSeperator {
+        display: none;
+    }
+
+    .topNavHamburgerIcon {
+        display: flex;
+        justify-content: flex-end;
+	}
+
+	.exitResponsive {
+		display: flex;
+		padding: 25px 0 0 25px;
+        margin-bottom: 25px;
+        color: #333333;
+	}
+
+	.topNavHamburgerMenu {
+		display: none;
+		position: absolute;
+        top: 0;
+        right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(255,255,255,1);
+        color: #FFFFFF;
+        height: 100vh;
+        z-index: 100;
+	}
+
+    .navColumns {
+        flex-direction: column;
+    }
+
+    .topNavItemHidden {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .topNavLinkHidden {
+        font-size: 3.0rem;
+        width: 100%;
+        padding: 15px;
+        color: #FFFFFF;
+    }
+
+} /*END OF MAX-WIDTH 750PX */

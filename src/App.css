@@ -209,7 +209,8 @@ header {
   text-align: center;
   font-family: 'Playfair Display', serif;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: relative; }
 
 .topNavLinks {
   margin: 20px 0;
@@ -222,6 +223,17 @@ header {
   .topNavLinks .navSeperator {
     padding: 10px 0; }
 
+.topNavHamburgerIcon {
+  display: none;
+  font-size: 3.5rem; }
+
+.exitResponsive {
+  display: none;
+  font-size: 2.5rem; }
+
+.show.topNavHamburgerMenu {
+  display: block; }
+
 .navLink:visited {
   color: #333333; }
 
@@ -232,6 +244,43 @@ header {
     background-color: rgba(252, 252, 252, 0.877);
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
 
+@media (max-width: 750px) {
+  .header h1 {
+    text-align: left; }
+  .navSeperator {
+    display: none; }
+  .topNavHamburgerIcon {
+    display: flex;
+    justify-content: flex-end; }
+  .exitResponsive {
+    display: flex;
+    padding: 25px 0 0 25px;
+    margin-bottom: 25px;
+    color: #333333; }
+  .topNavHamburgerMenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    color: #FFFFFF;
+    height: 100vh;
+    z-index: 100; }
+  .navColumns {
+    flex-direction: column; }
+  .topNavItemHidden {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    text-align: center; }
+  .topNavLinkHidden {
+    font-size: 3.0rem;
+    width: 100%;
+    padding: 15px;
+    color: #FFFFFF; } }
+
+/*END OF MAX-WIDTH 750PX */
 .landingPage {
   flex: 0 1 100%;
   background-color: rgba(177, 177, 177, 0.377);
@@ -282,6 +331,11 @@ header {
 .blogListCategories {
   font-style: oblique; }
 
+@media (max-width: 750px) {
+  .blogListPicture {
+    display: none; } }
+
+/*END OF MAX-WIDTH 750PX */
 .blogPost {
   flex: 0 1 80%;
   background-color: rgba(241, 194, 194, 0.233);
@@ -310,6 +364,7 @@ header {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 25px;
   margin-bottom: 25px;
   text-align: center;
   width: 50%; }
@@ -347,15 +402,18 @@ header {
 .commentForm {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 75%;
   margin-bottom: 25px; }
 
 .commentSubmit {
   margin-top: 15px;
-  width: 25%; }
+  padding: 5px;
+  width: 30%;
+  font-size: 1.4rem; }
 
 .commentLabel {
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-bottom: 5px; }
 
 .singleComment {
   margin: 0 0 15px 0;
@@ -369,6 +427,14 @@ header {
     font-size: 1.3rem;
     margin-top: 10px; }
 
+@media (max-width: 550px) {
+  .commentForm {
+    width: 100%; }
+  .commentSubmit {
+    width: 40%;
+    font-size: 1.4rem; } }
+
+/*END OF MAX-WIDTH 750PX */
 .aboutUsSection h2 {
   margin-bottom: 50px; }
 
@@ -405,8 +471,21 @@ header {
   border: none;
   padding: 5px;
   margin-top: 20px;
-  background-color: #FFFFFF; }
+  background-color: transparent;
+  transition: all 0.5s ease-in; }
+  .contactSubmit:hover {
+    background-color: #333333;
+    color: rgba(240, 240, 240, 0.945); }
 
+@media (max-width: 750px) {
+  .contactName,
+  .contactEmail {
+    flex-basis: 100%;
+    margin-bottom: 0; }
+  .contactMessage {
+    margin-top: 25px; } }
+
+/*END OF MAX-WIDTH 750PX */
 .adminForm {
   width: 100%;
   padding: 25px;

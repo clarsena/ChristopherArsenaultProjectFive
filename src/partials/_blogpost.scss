@@ -32,6 +32,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 25px;
     margin-bottom: 25px;
     text-align: center;
     width: 50%;
@@ -75,17 +76,20 @@
 .commentForm {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 75%;
     margin-bottom: 25px
 }
 
 .commentSubmit {
     margin-top: 15px;
-    width: 25%;
+    padding: 5px;
+    width: 30%;
+    font-size: 1.4rem;
 }
 
 .commentLabel {
     margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .singleComment {
@@ -102,3 +106,17 @@
         margin-top: 10px;
     }
 }
+
+@media (max-width: 550px) {
+
+    .commentForm {
+        width: 100%;
+    }
+
+    .commentSubmit {
+        width: 40%;
+        font-size: 1.4rem;
+    }
+    
+
+} /*END OF MAX-WIDTH 750PX */

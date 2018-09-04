@@ -53,3 +53,11 @@
 .blogListCategories {
     font-style: oblique;
 }
+
+@media (max-width: 750px) {
+
+    .blogListPicture {
+        display: none;
+    }
+
+} /*END OF MAX-WIDTH 750PX */

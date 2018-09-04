@@ -26,5 +26,24 @@
     border: none;
     padding: 5px;
     margin-top: 20px;
-    background-color: #FFFFFF;
+    background-color: transparent;
+    transition: all 0.5s ease-in;
+    &:hover {
+        background-color: #333333;
+        color: rgba(240, 240, 240, 0.945);
+    }
 }
+
+@media (max-width: 750px) {
+
+    .contactName, 
+    .contactEmail {
+        flex-basis: 100%;
+        margin-bottom: 0;
+    }    
+
+    .contactMessage {
+        margin-top: 25px;
+    }
+
+} /*END OF MAX-WIDTH 750PX */
