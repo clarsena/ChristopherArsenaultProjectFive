@@ -234,15 +234,16 @@ header {
 .show.topNavHamburgerMenu {
   display: block; }
 
-.navLink:visited {
+.navLink {
   color: #333333; }
-
-.navLink li {
-  padding: 10px;
-  transition: all 0.5s ease-in; }
-  .navLink li:hover {
-    background-color: rgba(252, 252, 252, 0.877);
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
+  .navLink:visited {
+    color: #333333; }
+  .navLink li {
+    padding: 10px;
+    transition: all 0.5s ease-in; }
+    .navLink li:hover {
+      background-color: rgba(252, 252, 252, 0.877);
+      box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
 
 @media (max-width: 750px) {
   .header h1 {
@@ -255,7 +256,6 @@ header {
   .exitResponsive {
     display: flex;
     padding: 25px 0 0 25px;
-    margin-bottom: 25px;
     color: #333333; }
   .topNavHamburgerMenu {
     display: none;
@@ -271,14 +271,11 @@ header {
   .navColumns {
     flex-direction: column; }
   .topNavItemHidden {
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    text-align: center; }
-  .topNavLinkHidden {
-    font-size: 3.0rem;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 2.0rem;
     width: 100%;
-    padding: 15px;
-    color: #FFFFFF; } }
+    color: #333333; } }
 
 /*END OF MAX-WIDTH 750PX */
 .landingPage {

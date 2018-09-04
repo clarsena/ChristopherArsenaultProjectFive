@@ -47,7 +47,7 @@ class Landing extends Component {
                         <Link to={`/blog-post/${post.key}`} key={post.key}>
                             <article className="blogListListing" key={post.key}>
                                 <figure className="blogListPicture">
-                                    <img src={post.image ? `${post.image}` : "/assets/default.jpg"} />
+                                    <img src={post.image ? `${post.image}` : "/assets/default.jpg"} alt="yummy food" />
                                 </figure>
                                 <div className="blogListText">
                                     <h3 className="blogListTitle">{post.title}</h3>

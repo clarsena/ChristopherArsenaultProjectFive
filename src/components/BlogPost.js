@@ -74,7 +74,7 @@ class BlogPost extends Component {
                 <h4 className="blogPostAuthor">Written By: {this.state.author}</h4>
                 <h4 className="blogPostDate">Posted On: {this.state.postDate}</h4>
                 <figure className="blogPostImage">
-                    <img src={this.state.image ? `${this.state.image}` : "/assets/default.jpg"} alt="food"/>
+                    <img src={this.state.image ? `${this.state.image}` : "/assets/default.jpg"} alt="yummy food"/>
                 </figure>
                 <div className="blogPostText" dangerouslySetInnerHTML={{__html: this.state.cleanPost}}/>
                 <p className="blogPostCategories">Categories: {this.state.category}</p>

@@ -22,19 +22,19 @@ class Header extends Component {
                     <div className={this.state.isActive ? 'topNavHamburgerMenu show' : 'topNavHamburgerMenu'}>
                         <ul className="topNavLinks navColumns">
                             <li onClick={this.toggleNavMenu} className="exitResponsive"><i className="fas fa-times"></i></li>
-                            <Link to="/" onClick={this.toggleNavMenu} className="navLink topNavItemHidden topNavLinkHidden"><li>Home</li></Link>
+                            <Link to="/" onClick={this.toggleNavMenu} className="navLink topNavItemHidden"><li>Home</li></Link>
                             <li className="navSeperator"> | </li>
-                            <Link to="/admin" onClick={this.toggleNavMenu} className="navLink topNavItemHidden topNavLinkHidden"><li>Add Post</li></Link>
+                            <Link to="/admin" onClick={this.toggleNavMenu} className="navLink topNavItemHidden"><li>Add Post</li></Link>
                             <li className="navSeperator"> | </li>
-                            <Link to="/aboutus" onClick={this.toggleNavMenu} className="navLink topNavItemHidden topNavLinkHidden"><li>About Us</li></Link>
+                            <Link to="/aboutus" onClick={this.toggleNavMenu} className="navLink topNavItemHidden"><li>About Us</li></Link>
                             <li className="navSeperator"> | </li>
-                            <Link to="/contactus" onClick={this.toggleNavMenu} className="navLink topNavItemHidden topNavLinkHidden"><li>Contact Us</li></Link>
+                            <Link to="/contactus" onClick={this.toggleNavMenu} className="navLink topNavItemHidden"><li>Contact Us</li></Link>
                             <li className="navSeperator"> | </li>
-                            <Link to={`/blog-list/recipes`} onClick={this.toggleNavMenu} className="navLink topNavItemHidden topNavLinkHidden" ><li key="recipes">Recipes</li></Link>
+                            <Link to={`/blog-list/recipes`} onClick={this.toggleNavMenu} className="navLink topNavItemHidden" ><li key="recipes">Recipes</li></Link>
                             <li className="navSeperator"> | </li>
-                            <Link to={`/blog-list/restaurants`} onClick={this.toggleNavMenu} className="navLink topNavItemHidden topNavLinkHidden" ><li key="restaurants">Restaurants</li></Link>
+                            <Link to={`/blog-list/restaurants`} onClick={this.toggleNavMenu} className="navLink topNavItemHidden" ><li key="restaurants">Restaurants</li></Link>
                             <li className="navSeperator"> | </li>
-                            <Link to={`/blog-list/foodadventures`} onClick={this.toggleNavMenu} className="navLink topNavItemHidden topNavLinkHidden" ><li key="foodadventures">Food Adventures</li></Link>
+                            <Link to={`/blog-list/foodadventures`} onClick={this.toggleNavMenu} className="navLink topNavItemHidden" ><li key="foodadventures">Food Adventures</li></Link>
                         </ul>
                     </div>
                 </nav>

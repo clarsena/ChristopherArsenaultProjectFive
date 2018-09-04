@@ -8,7 +8,7 @@ class Preview extends Component {
                     <h3 className="blogPostTitle">{this.props.previewTitle}</h3>
                     <h4 className="blogPostAuthor">Written By: {this.props.previewAuthor}</h4>
                     <figure className="blogPostImage">
-                        <img src={this.props.previewImage ? `${this.props.previewImage}` : "/assets/default.jpg"} alt="food"/>
+                        <img src={this.props.previewImage ? `${this.props.previewImage}` : "/assets/default.jpg"} alt="yummy food"/>
                     </figure>
                     <div className="blogPostText" dangerouslySetInnerHTML={{__html: sanitizeHTML(this.props.previewText, {
                         allowedTags: sanitizeHTML.defaults.allowedTags.concat([ 'img' ]),

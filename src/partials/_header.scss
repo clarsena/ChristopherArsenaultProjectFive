@@ -38,6 +38,7 @@ header {
 }
 
 .navLink {
+    color: #333333;
     &:visited {
         color: #333333;
     }
@@ -71,7 +72,6 @@ header {
 	.exitResponsive {
 		display: flex;
 		padding: 25px 0 0 25px;
-        margin-bottom: 25px;
         color: #333333;
 	}
 
@@ -93,16 +93,11 @@ header {
     }
 
     .topNavItemHidden {
-        padding-bottom: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
         text-align: center;
-    }
-
-    .topNavLinkHidden {
-        font-size: 3.0rem;
+        font-size: 2.0rem;
         width: 100%;
-        padding: 15px;
-        color: #FFFFFF;
+        color: #333333;
     }
 
 } /*END OF MAX-WIDTH 750PX */
