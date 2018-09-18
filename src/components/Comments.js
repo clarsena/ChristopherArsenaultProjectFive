@@ -28,22 +28,22 @@ class Comments extends Component {
 
     }
     render() {
-        {/* RENDERS THE COMMENT SUBMISSION FOR AND ACTUAL COMMENTS TO THE PAGE */}
         return (
-            <div className="blogPostComments">
+            // RENDERS THE COMMENT SUBMISSION AND ACTUAL COMMENTS TO THE PAGE
+            <div className='blogPostComments'>
                 <h3>Comments</h3>
-                <form className="commentForm" onSubmit={this.handleSubmit} id="commentForm">
-                    <label className="commentLabel" htmlFor="commentAuthor">Name: </label>
-                    <input onChange={this.handleChange} type="text" id="commentAuthor" value={this.state.commentAuthor} />
-                    <label className="commentLabel" htmlFor="commentText">Write your comment here: </label>
-                    <input onChange={this.handleChange} type="text" id="commentText" value={this.state.commentText} />
-                    <input className="commentSubmit" type="submit" value="Add Comment"/>
+                <form className='commentForm' onSubmit={this.handleSubmit} id='commentForm'>
+                    <label className='commentLabel' htmlFor='commentAuthor'>Name: </label>
+                    <input onChange={this.handleChange} type='text' id='commentAuthor' value={this.state.commentAuthor} />
+                    <label className='commentLabel' htmlFor='commentText'>Write your comment here: </label>
+                    <input onChange={this.handleChange} type='text' id='commentText' value={this.state.commentText} />
+                    <input className='commentSubmit' type='submit' value='Add Comment'/>
                 </form>
 
-                <div className="commentArea">
+                <div className='commentArea'>
                     {this.props.allComments.map((comment) => {
                         return (
-                            <div className="singleComment">
+                            <div className='singleComment'>
                                 <h4>Commentor: {comment.commentAuthor}</h4>
                                 <h4>Date: {comment.commentDate}</h4>
                                 <p>{comment.commentText}</p>

@@ -1,14 +1,28 @@
 //  START OF HEADER / NAV STYLING
 
-header {
+.header {
     padding: 30px;
-    background-color: rgba(240, 240, 240, 0.945);
+    background-color: rgb(255, 255, 255);
     flex-basis: 100%;
-    text-align: center;
     font-family: 'Playfair Display', serif;
     display: flex;
     flex-direction: column;
     position: relative;
+    h1 {
+        display: block;
+        width: 100%;
+        padding-left: 10px;
+        font-family: "Great Vibes", cursive;
+        font-size: 5.0rem;
+        font-weight: 400;
+    }
+}
+
+.topNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .topNavLinks {
@@ -16,12 +30,11 @@ header {
     list-style: none;
     width: 100%;
     display: flex;
-    justify-content: center;
     li {
         padding: 10px;
     }
     .navSeperator {
-        padding: 10px 0;
+        padding: 10px 5px;
     }
 }
 
@@ -35,8 +48,14 @@ header {
 	font-size: 2.5rem;
 }
 
+.topNavHamburgerMenu {
+    width: 100%;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+}
+
 .show.topNavHamburgerMenu {
-	display: block;
+    display: block;
 }
 
 .navLink {
@@ -48,7 +67,7 @@ header {
         padding: 10px;
         transition: all 0.5s ease-in;
         &:hover {
-            background-color: rgba(252, 252, 252, 0.877);
+            background-color: rgba(236, 150, 51, 0.5);
             box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
         }
     }
@@ -59,27 +78,29 @@ header {
 @media (max-width: 750px) {
 
     .header {
-        padding: 15px 25px;
+        // padding: 15px 25px;
+        text-align: left;
         h1 {
-            text-align: left;
-            margin-bottom: 10px;
+            display: inline-block;
+            width: auto;
         }
     }
 
     .navSeperator {
         display: none;
     }
-
     .topNavHamburgerIcon {
-        display: flex;
-        justify-content: flex-end;
+        display: inline-block;
 	}
 
-	.exitResponsive {
-		display: flex;
-		padding: 25px 0 0 25px;
-        color: #333333;
-	}
+    .topNavLinks {
+        .exitResponsive {
+            display: flex;
+            align-self: flex-end;
+            padding: 0 25px 25px 0;
+            color: #333333;
+        }
+    }
 
 	.topNavHamburgerMenu {
 		display: none;

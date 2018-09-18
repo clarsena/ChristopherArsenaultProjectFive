@@ -18,7 +18,7 @@ class BlogList extends Component {
     }
     componentDidMount() {
         //  GRABBING A SNAPSHOT OF THE BLOG POSTS NODE FROM FIREBASE WHEN THE COMPONENT MOUNTS
-        const category = (this.props.match.params.category.toLowerCase().replace(" ", ""));
+        const category = (this.props.match.params.category.toLowerCase().replace(' ', ''));
         this.setState({ 
             currentCategory: category
         })
@@ -28,7 +28,7 @@ class BlogList extends Component {
     }
     //  GRABBING A SNAPSHOT OF THE BLOG POSTS NODE FROM FIREBASE WHEN THE COMPONENT WILL RECEIVE COMPONENTS (WHEN SELECTING A DIFFERENT CATEGORY)
     componentWillReceiveProps(nextProps) {
-        const category = (nextProps.match.params.category.toLowerCase().replace(" ", ""));
+        const category = (nextProps.match.params.category.toLowerCase().replace(' ', ''));
         this.setState({
             currentCategory: category
         })
@@ -58,22 +58,22 @@ class BlogList extends Component {
     }
     render() {
         return (
-            <section className="blogList">
+            <section className='blogList'>
                 <h2>List of Posts Under - {this.props.match.params.category}</h2>
                 {/* GOING THROUGH THE ARRAY OF FILTERED POSTS AND RENDERING THEM ONTO THE PAGE*/}
                 {this.state.filteredLists.map((post) => {
                     return (
                         <Link to={`/blog-post/${post.key}`} key={post.key}>
-                            <article className="blogListListing" key={post.key}>
-                                <figure className="blogListPicture">
-                                    <img src={post.image ? `${post.image}` : "/assets/default.jpg"} alt="yummy food" />
+                            <article className='blogListListing' key={post.key}>
+                                <figure className='blogListPicture'>
+                                    <img src={post.image ? `${post.image}` : '/assets/default.jpg'} alt='yummy food' />
                                 </figure>
-                                <div className="blogListText">
-                                    <h3 className="blogListTitle">{post.title}</h3>
-                                    <h4 className="blogListAuthor">Writter By: {post.author}</h4>
-                                    <h4 className="blogListDate">Posted On: {post.postDate}</h4>
-                                    <p className="blogListDescription">{post.shortDescription}</p>
-                                    <p className="blogListCategories">Categories: {post.category}</p>
+                                <div className='blogListText'>
+                                    <h3 className='blogListTitle'>{post.title}</h3>
+                                    <h4 className='blogListAuthor'>Writter By: {post.author}</h4>
+                                    <h4 className='blogListDate'>Posted On: {post.postDate}</h4>
+                                    <p className='blogListDescription'>{post.shortDescription}</p>
+                                    <p className='blogListCategories'>Categories: {post.category}</p>
                                 </div>
                             </article>
                         </Link>

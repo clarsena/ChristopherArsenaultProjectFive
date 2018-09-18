@@ -1,37 +1,57 @@
 //  START OF ADD / EDIT POST STYLING
 
-.adminForm { 
+.adminForm{ 
     width: 100%;
     padding: 25px;
     display: flex;
     flex-direction: column;
-    fieldset {
+    fieldset{
         display: flex;
         flex-direction: column;
     }
 }
 
-.newPostLabel {
+.newPostLabel{
     flex: 0 1 100%;
     padding-bottom: 5px;
 }
 
-.newPostInput {
+.newPostInput{
     margin-bottom: 15px;
     width: 100%;
     padding: 5px;
 }
 
-fieldset.newPostInput {
+.newPostSubmit{
+    width: 175px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    align-self: center;
+    border: none;
+    transition: all 0.4s ease-in;
+    &:hover {
+        background-color: rgba(236, 150, 51, 0.5);
+    }
+}
+
+fieldset.newPostInput{
     padding: 10px;
 }
 
-.fieldsetLabel {
+.fieldsetLabel{
     width: 125px;
 }
 
-.fieldsetInput {
+.fieldsetInput{
     width: 10px;
+}
+
+.demo-editor.rdw-editor-main{
+    height: 25vh;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding-left: 10px;
 }
 
 //  END OF ADD / EDIT POST STYLING

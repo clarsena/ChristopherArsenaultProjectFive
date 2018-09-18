@@ -8,19 +8,20 @@
     justify-content: space-between;
     margin-bottom: 25px;
     label {
-        margin-top: 20px;
+        margin-top: 15px;
+        width: 100%;
     }
 }
 
 .contactName, 
-.contactEmail {
-    flex: 0 1 48%;
-    margin: 25px 0;
+.contactEmail,
+.contactSubject {
+    width: 100%;
     padding: 5px;
 }
 
 .contactMessage {
-    flex: 1 1 100%;
+    width: 100%;
     padding: 5px;
 }
 
@@ -28,11 +29,12 @@
     border: none;
     padding: 5px;
     margin-top: 20px;
-    background-color: transparent;
-    transition: all 0.5s ease-in;
+    width: 175px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.4s ease-in;
     &:hover {
-        background-color: #333333;
-        color: rgba(240, 240, 240, 0.945);
+        background-color: rgba(236, 150, 51, 0.5);
     }
 }
 

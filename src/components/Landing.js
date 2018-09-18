@@ -39,9 +39,9 @@ class Landing extends Component {
         })
     }
     render() {
-        {/* RENDERS THE BLOG POST TO THE PAGE. FOR THE IMAGE, IF THERE IS A PATH INSIDE, SHOW IT, OTHERWISE LOAD A DEFAULT PAGE */}
+        // RENDERS THE BLOG POST TO THE PAGE. FOR THE IMAGE, IF THERE IS A PATH INSIDE, SHOW IT, OTHERWISE LOAD A DEFAULT PAGE
         return (
-            <section className="blogList">
+            <section className='blogList'>
                 <h2>Latest Updates</h2>
                 {this.state.blogPostList.map((post) => {
                     const cleanText = sanitizeHTML(post.shortDescription, {
@@ -50,16 +50,16 @@ class Landing extends Component {
                       })
                     return (
                         <Link to={`/blog-post/${post.key}`} key={post.key}>
-                            <article className="blogListListing" key={post.key}>
-                                <figure className="blogListPicture">
-                                    <img src={post.image ? `${post.image}` : "/assets/default.jpg"} alt="yummy food" />
+                            <article className='blogListListing' key={post.key}>
+                                <figure className='blogListPicture'>
+                                    <img src={post.image ? `${post.image}` : '/assets/default.jpg'} alt='yummy food' />
                                 </figure>
-                                <div className="blogListText">
-                                    <h3 className="blogListTitle">{post.title}</h3>
-                                    <h4 className="blogListAuthor">Writter By: {post.author}</h4>
-                                    <h4 className="blogListDate">Posted On: {post.postDate}</h4>
-                                    <p className="blogListDescription">{cleanText}</p>
-                                    <p className="blogListCategories">Categories: {post.category}</p>
+                                <div className='blogListText'>
+                                    <h3 className='blogListTitle'>{post.title}</h3>
+                                    <h4 className='blogListAuthor'>Writter By: {post.author}</h4>
+                                    <h4 className='blogListDate'>Posted On: {post.postDate}</h4>
+                                    <p className='blogListDescription'>{cleanText}</p>
+                                    <p className='blogListCategories'>Categories: {post.category}</p>
                                 </div>
                             </article>
                         </Link>

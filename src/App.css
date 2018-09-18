@@ -202,26 +202,55 @@ ul {
 a {
   text-decoration: none; }
 
-header {
+.App {
+  display: flex;
+  flex-direction: column; }
+
+.mainContent {
+  display: flex;
+  width: 100%; }
+
+.wrapper {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  background-color: rgba(255, 255, 255, 0.733); }
+
+.header {
   padding: 30px;
-  background-color: rgba(240, 240, 240, 0.945);
+  background-color: white;
   flex-basis: 100%;
-  text-align: center;
   font-family: 'Playfair Display', serif;
   display: flex;
   flex-direction: column;
   position: relative; }
+  .header h1 {
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+    font-family: "Great Vibes", cursive;
+    font-size: 5.0rem;
+    font-weight: 400; }
+
+.topNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; }
 
 .topNavLinks {
   margin: 20px 0;
   list-style: none;
   width: 100%;
-  display: flex;
-  justify-content: center; }
+  display: flex; }
   .topNavLinks li {
     padding: 10px; }
   .topNavLinks .navSeperator {
-    padding: 10px 0; }
+    padding: 10px 5px; }
 
 .topNavHamburgerIcon {
   display: none;
@@ -230,6 +259,11 @@ header {
 .exitResponsive {
   display: none;
   font-size: 2.5rem; }
+
+.topNavHamburgerMenu {
+  width: 100%;
+  border-top: 1px solid #333333;
+  border-bottom: 1px solid #333333; }
 
 .show.topNavHamburgerMenu {
   display: block; }
@@ -242,23 +276,23 @@ header {
     padding: 10px;
     transition: all 0.5s ease-in; }
     .navLink li:hover {
-      background-color: rgba(252, 252, 252, 0.877);
+      background-color: rgba(236, 150, 51, 0.5);
       box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
 
 @media (max-width: 750px) {
   .header {
-    padding: 15px 25px; }
+    text-align: left; }
     .header h1 {
-      text-align: left;
-      margin-bottom: 10px; }
+      display: inline-block;
+      width: auto; }
   .navSeperator {
     display: none; }
   .topNavHamburgerIcon {
+    display: inline-block; }
+  .topNavLinks .exitResponsive {
     display: flex;
-    justify-content: flex-end; }
-  .exitResponsive {
-    display: flex;
-    padding: 25px 0 0 25px;
+    align-self: flex-end;
+    padding: 0 25px 25px 0;
     color: #333333; }
   .topNavHamburgerMenu {
     display: none;
@@ -284,25 +318,20 @@ header {
 .landingPage {
   flex: 0 1 100%;
   background-color: rgba(177, 177, 177, 0.377);
-  padding: 20px 25px 0 25px; }
+  padding: 20px 40px 30px 40px;
+  margin-bottom: 20px; }
 
 .blogListListing {
-  margin-top: 60px;
+  margin-top: 30px;
   padding: 20px 25px;
   color: #333333;
-  transition: all 0.5s ease-in;
+  transition: all 0.4s ease-in;
   position: relative;
-  display: flex; }
+  display: flex;
+  background-color: rgba(252, 252, 252, 0.877);
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
   .blogListListing:hover {
-    background-color: rgba(252, 252, 252, 0.877);
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3); }
-  .blogListListing::after {
-    content: '';
-    width: 75%;
-    border-bottom: 2px solid #333333;
-    position: absolute;
-    left: 10%;
-    bottom: -6%; }
+    background-color: rgba(236, 150, 51, 0.5); }
 
 .blogListPicture {
   flex: 0 1 25%;
@@ -379,30 +408,6 @@ header {
   .blogPostImage img {
     max-width: 100%; }
 
-.blogPostText .bold {
-  font-weight: 800; }
-
-.blogPostText .underline {
-  text-decoration: underline; }
-
-.blogPostText .italic {
-  font-style: oblique; }
-
-.blogPostText .center {
-  text-align: center; }
-
-.blogPostText .right {
-  text-align: right; }
-
-.blogPostText .left {
-  text-align: left; }
-
-.blogPostText .big {
-  font-size: 2.0rem; }
-
-.blogPostText .small {
-  font-size: 1.2rem; }
-
 .blogPostComments {
   margin-top: 25px;
   width: 100%; }
@@ -416,8 +421,14 @@ header {
 .commentSubmit {
   margin-top: 15px;
   padding: 5px;
-  width: 30%;
-  font-size: 1.4rem; }
+  width: 175px;
+  height: 40px;
+  font-size: 1.4rem;
+  background-color: white;
+  border: none;
+  transition: all 0.4s ease-in; }
+  .commentSubmit:hover {
+    background-color: rgba(236, 150, 51, 0.5); }
 
 .commentLabel {
   margin-top: 15px;
@@ -463,27 +474,29 @@ header {
   justify-content: space-between;
   margin-bottom: 25px; }
   .contactUsForm label {
-    margin-top: 20px; }
+    margin-top: 15px;
+    width: 100%; }
 
 .contactName,
-.contactEmail {
-  flex: 0 1 48%;
-  margin: 25px 0;
+.contactEmail,
+.contactSubject {
+  width: 100%;
   padding: 5px; }
 
 .contactMessage {
-  flex: 1 1 100%;
+  width: 100%;
   padding: 5px; }
 
 .contactSubmit {
   border: none;
   padding: 5px;
   margin-top: 20px;
-  background-color: transparent;
-  transition: all 0.5s ease-in; }
+  width: 175px;
+  height: 40px;
+  background-color: white;
+  transition: all 0.4s ease-in; }
   .contactSubmit:hover {
-    background-color: #333333;
-    color: rgba(240, 240, 240, 0.945); }
+    background-color: rgba(236, 150, 51, 0.5); }
 
 @media (max-width: 750px) {
   .contactName,
@@ -512,6 +525,17 @@ header {
   width: 100%;
   padding: 5px; }
 
+.newPostSubmit {
+  width: 175px;
+  height: 40px;
+  background-color: white;
+  padding: 5px;
+  align-self: center;
+  border: none;
+  transition: all 0.4s ease-in; }
+  .newPostSubmit:hover {
+    background-color: rgba(236, 150, 51, 0.5); }
+
 fieldset.newPostInput {
   padding: 10px; }
 
@@ -521,20 +545,8 @@ fieldset.newPostInput {
 .fieldsetInput {
   width: 10px; }
 
-.App {
-  display: flex;
-  flex-direction: column; }
-
-.mainContent {
-  display: flex;
-  width: 100%; }
-
-.wrapper {
-  max-width: 1250px;
-  width: 100%;
-  margin: 0 auto; }
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.6rem;
-  background-color: rgba(255, 255, 255, 0.733); }
+.demo-editor.rdw-editor-main {
+  height: 25vh;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-left: 10px; }

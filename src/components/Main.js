@@ -13,14 +13,14 @@ import BlogPost from './BlogPost';
 //  ROUTING SETUP TO NAVIGATE THROUGH THE SITE
 const Main = () => {
     return (
-        <section className="landingPage">
+        <section className='landingPage'>
             <Switch>
-                <Route exact path="/" component={Landing} />
-                <Route path="/blog-list/:category" component={BlogList} />
-                <Route path="/blog-post/:key" component={BlogPost} />
-                <Route path="/admin" component={AddEditPost} />
-                <Route path="/aboutus" component={AboutUs} />
-                <Route path="/contactus" component={ContactUs} />
+                <Route exact path='/' component={Landing} />
+                <Route path='/blog-list/:category' component={BlogList} />
+                <Route path='/blog-post/:key' component={BlogPost} />
+                <Route path='/admin' component={AddEditPost} />
+                <Route path='/aboutus' component={AboutUs} />
+                <Route path='/contactus' component={ContactUs} />
                 <Route component={NotFound} />
             </Switch>
         </section>

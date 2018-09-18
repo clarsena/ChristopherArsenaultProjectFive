@@ -1,11 +1,4 @@
 @import 'partials/setup';
-@import 'partials/header';
-@import 'partials/landing';
-@import 'partials/bloglist';
-@import 'partials/blogpost';
-@import 'partials/aboutus';
-@import 'partials/contactus';
-@import 'partials/addeditpost';
 
 .App {
   display: flex;
@@ -28,3 +21,11 @@ body {
   font-size: 1.6rem;
   background-color: rgba(255, 255, 255, 0.733);
 }
+
+@import 'partials/header';
+@import 'partials/landing';
+@import 'partials/bloglist';
+@import 'partials/blogpost';
+@import 'partials/aboutus';
+@import 'partials/contactus';
+@import 'partials/addeditpost';
